@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CinePlex — Locations</title>
+  <!-- Links the Favicon image to show up at the top tab of the brower -->
+  <link rel="icon" href="Images/favicon.png">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="CSS/global.css" />
+  <link rel="stylesheet" href="CSS/locations.css" />
+
+  <!-- External JavaScript -->
+  <script src="JavaScripts/nav.js" defer></script>
+  <script src="JavaScripts/Accessibility_Buttion.js" defer></script>
+  <script src="JavaScripts/subscribe.js" defer></script>
+</head>
+
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="nav" id="mainNav">
+
+    <!-- Website logo/title -->
+    <a href="#" class="nav__logo">Cine<span>Plex</span></a>
+
+    <!-- Navigation links -->
+    <ul class="nav__links">
+      <li><a href="Main-Menu.html" class="nav__link">Home</a></li>
+      <li><a href="whatson.html" class="nav__link">What's On</a></li>
+      <li><a href="Locations.html" class="nav__link active">Location</a></li>
+      <li><a href="Contactus.html" class="nav__link">Contact Us</a></li>
+    </ul>
+
+    <!-- Navigation actions (UPDATED) -->
+    <div class="nav__actions">
+
+      <!-- Profile button with SVG icon -->
+      <button class="nav__icon-btn" aria-label="Profile">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+          <circle cx="12" cy="7" r="4" />
+        </svg>
+      </button>
+
+      <!-- Accessibility button -->
+      <button id="contrastBtn" class="nav__cta">
+        High Contrast
+      </button>
+
+      <button id="textResizeBtn" class="nav__cta">
+        Bigger Text
+      </button>
+
+      <!-- Get Tickets button (added here) -->
+      <a href="whatson.html" class="nav__cta">Get Tickets</a>
+
+    </div>
+
+    <!-- Hamburger menu button -->
+    <button class="nav__hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+  </nav>
+
+  <!-- Mobile navigation drawer -->
+  <div class="nav__drawer" id="drawer">
+    <a href="Main-Menu.html" class="nav__link active">Home</a>
+    <a href="whatson.html" class="nav__link">What's On</a>
+    <a href="Locations.html" class="nav__link">Location</a>
+    <a href="Contactus.html" class="nav__link">Contact Us</a>
+  </div>
+
+  <main>
+
+    <!-- LOCATIONS SECTION -->
+    <section class="locations">
+
+      <h2 class="locations__title">Our Locations</h2>
+
+      <div class="locations__grid">
+
+        <!-- Belfast -->
+        <div class="location-card">
+          <h3>Belfast</h3>
+          <p>25 Cinema Street</p>
+          <p class="location-hours">Open: 10:00 - 23:00</p>
+
+          <iframe src="https://maps.google.com/maps?q=Belfast&t=&z=13&ie=UTF8&iwloc=&output=embed" class="location-map">
+          </iframe>
+
+          <a href="whatson.html" class="location-link">View Showtimes</a>
+        </div>
+
+        <!-- Derry -->
+        <div class="location-card">
+          <h3>Derry</h3>
+          <p>12 Film Lane</p>
+          <p class="location-hours">Open: 10:00 - 23:00</p>
+
+          <iframe src="https://maps.google.com/maps?q=Derry&t=&z=13&ie=UTF8&iwloc=&output=embed" class="location-map">
+          </iframe>
+
+          <a href="whatson.html" class="location-link">View Showtimes</a>
+        </div>
+
+        <!-- Manchester -->
+        <div class="location-card">
+          <h3>Manchester</h3>
+          <p>45 Cinema Street</p>
+          <p class="location-hours">Open: 10:00 - 23:00</p>
+
+          <iframe src="https://maps.google.com/maps?q=Manchester&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            class="location-map">
+          </iframe>
+
+          <a href="whatson.html" class="location-link">View Showtimes</a>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER SECTION -->
+  <footer class="footer">
+    <div class="footer__inner">
+
+      <div class="footer__main">
+
+        <!-- Left side of footer (social section) -->
+        <div class="footer__left">
+          <h4 class="footer__section-title">Join the Conversation</h4>
+
+          <!-- Social media icons -->
+          <div class="footer__socials">
+
+            <!-- Facebook icon -->
+            <a href="#" class="footer__social" aria-label="Facebook">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
+            </a>
+
+            <!-- Instagram icon -->
+            <a href="#" class="footer__social" aria-label="Instagram">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Right side of footer (newsletter signup) -->
+        <div class="footer__right">
+          <h4 class="footer__section-title">
+            Receive Our Latest Releases and Offers
+          </h4>
+
+          <!-- Email subscription form -->
+          <div class="footer__newsletter-form">
+            <input class="footer__newsletter-input" id="emailInput" type="email" placeholder="Your Email Address" />
+
+            <!-- Button triggers email validation in JavaScript -->
+            <button class="footer__newsletter-btn" id="subscribeBtn">
+              Subscribe
+            </button>
+          </div>
+        </div>
+
+      </div>
+      <!-- Footer bottom (copyright) -->
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2026 CinePlex Ltd</p>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+
+</html>
+
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CinePlex — Checkout</title>
+  <!-- Links the Favicon image to show up at the top tab of the brower -->
+  <link rel="icon" href="Images/favicon.png">
+
+  <link rel="stylesheet" href="CSS/global.css" />
+  <link rel="stylesheet" href="CSS/checkout.css" />
+
+  <!-- External JavaScript -->
+  <script src="JavaScripts/nav.js" defer></script>
+  <script src="JavaScripts/subscribe.js" defer></script>
+  <script src="JavaScripts/Accessibility_Buttion.js" defer></script>
+  <script src="JavaScripts/checkout.js" defer></script>
+
+</head>
+
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="nav" id="mainNav">
+
+    <!-- Website logo/title -->
+    <a href="#" class="nav__logo">Cine<span>Plex</span></a>
+
+    <!-- Navigation links -->
+    <ul class="nav__links">
+      <li><a href="Main-Menu.html" class="nav__link">Home</a></li>
+      <li><a href="whatson.html" class="nav__link active">What's On</a></li>
+      <li><a href="Locations.html" class="nav__link">Location</a></li>
+      <li><a href="Contactus.html" class="nav__link">Contact Us</a></li>
+
+    </ul>
+
+
+    <!-- Navigation actions (profile icon and ticket button) -->
+    <div class="nav__actions">
+
+      <!-- Profile button with SVG icon -->
+      <button class="nav__icon-btn" aria-label="Profile">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+          <circle cx="12" cy="7" r="4" />
+        </svg>
+      </button>
+
+      <!-- Accessibility button -->
+      <button id="contrastBtn" class="nav__cta">
+        High Contrast
+      </button>
+      <button id="textResizeBtn" class="nav__cta">
+        Bigger Text
+      </button>
+
+      <!-- Call-to-action button -->
+      <a href="#" class="nav__cta">Get Tickets</a>
+    </div>
+
+    <!-- Hamburger menu button for mobile navigation -->
+    <button class="nav__hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile navigation drawer (shown when hamburger is clicked) -->
+  <div class="nav__drawer" id="drawer">
+    <a href="Main-Menu.html" class="nav__link">Home</a>
+    <a href="whatson.html" class="nav__link active">What's On</a>
+    <a href="Locations.html" class="nav__link">Location</a>
+    <a href="Contactus.html" class="nav__link">Contact Us</a>
+  </div>
+
+
+  <div class="checkout">
+    <div class="checkout__box">
+
+      <!-- Checkout form -->
+      <div id="checkoutForm">
+        <h1 class="checkout__title">Checkout</h1>
+        <p class="checkout__summary" id="bookingSummary">Loading...</p>
+
+        <div class="checkout__form">
+
+          <div>
+            <label class="checkout__label">Full Name</label>
+            <input class="checkout__input" type="text" placeholder="John Smith" id="nameInput" />
+          </div>
+
+          <div>
+            <label class="checkout__label">Email Address</label>
+            <input class="checkout__input" type="email" placeholder="john@email.com" id="emailInput" />
+          </div>
+
+          <div>
+            <label class="checkout__label">Number of Tickets</label>
+            <div class="checkout__tickets">
+              <button class="checkout__qty-btn" id="qtyMinus">−</button>
+              <span class="checkout__qty" id="qty">1</span>
+              <button class="checkout__qty-btn" id="qtyPlus">+</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="checkout__label">Card Number</label>
+            <input class="checkout__input" type="text" placeholder="1234 5678 9012 3456" maxlength="19"
+              id="cardInput" />
+          </div>
+
+          <div class="checkout__row">
+            <div>
+              <label class="checkout__label">Expiry</label>
+              <input class="checkout__input" type="text" placeholder="MM/YY" maxlength="5" id="expiryInput" />
+            </div>
+            <div>
+              <label class="checkout__label">CVV</label>
+              <input class="checkout__input" type="text" placeholder="123" maxlength="3" id="cvvInput" />
+            </div>
+          </div>
+
+          <div class="checkout__total">
+            <span>Total</span>
+            <strong id="totalPrice">£9.99</strong>
+          </div>
+
+          <button class="checkout__btn" id="confirmBtn">Confirm Booking</button>
+        </div>
+      </div>
+
+      <!-- Success screen -->
+      <div class="checkout__success" id="successScreen">
+        <div class="checkout__success-icon">✓</div>
+        <h2>Booking Successful!</h2>
+        <p class="checkout__success-detail" id="successDetail"></p>
+        <p>A confirmation has been sent to your email. Enjoy the film!</p>
+        <a href="Main-Menu.html" class="checkout__home-btn">← Return to Home</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__main">
+        <div class="footer__left">
+          <h4 class="footer__section-title">Join the Conversation</h4>
+          <div class="footer__socials">
+            <a href="#" class="footer__social" aria-label="Facebook">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
+            </a>
+            <a href="#" class="footer__social" aria-label="Instagram">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer__right">
+          <h4 class="footer__section-title">Receive Our Latest Releases and Offers</h4>
+          <div class="footer__newsletter-form">
+            <input class="footer__newsletter-input" id="newsletterEmail" type="email"
+              placeholder="Your Email Address" />
+            <button class="footer__newsletter-btn" id="subscribeBtn">Subscribe</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2026 CinePlex Ltd</p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

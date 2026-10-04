@@ -1,0 +1,647 @@
+/* imports external fonts from Google Fonts into CSS file */
+/* Imports Bebas Neue (for headings) and DM Sans (for body text) */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap');
+
+
+
+/* Central place for colours, fonts, spacing, and transitions */
+:root {
+  --bg-primary: #0a0a0f;
+  /* Main background colour */
+  --bg-surface: #111118;
+  /* Cards, sections, surfaces */
+  --accent-red: #e8003a;
+  /* Primary accent colour */
+  --accent-red-dim: rgba(232, 0, 58, 0.15);
+  /* Soft accent glow */
+
+  --text-primary: #f0eee8;
+  /* Main readable text */
+  --text-secondary: #888899;
+  /* Secondary text (less emphasis) */
+  --text-muted: #44445a;
+  /* Subtle / placeholder text */
+
+  --border: rgba(255, 255, 255, 0.06);
+  /* Default border */
+  --border-hover: rgba(232, 0, 58, 0.4);
+  /* Hover border highlight */
+
+  --font-display: 'Bebas Neue', sans-serif;
+  /* Headings */
+  --font-body: 'DM Sans', sans-serif;
+  /* Body text */
+
+  --nav-height: 70px;
+  /* Fixed navbar height */
+  --radius-sm: 4px;
+  /* Small border radius */
+
+  --shadow-glow: 0 0 30px rgba(232, 0, 58, 0.25);
+  /* Glow effect */
+
+  --transition-fast: 150ms ease;
+  /* Quick transitions */
+  --transition-smooth: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* Smooth animations */
+}
+
+
+/* ─── Reset (Removes Browser Defaults) ─────────────────────── */
+/* Ensures consistent styling across browsers */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Enables smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* ─── Base Body Styling ───────────────────────────────────── */
+/* Sets global typography, colours, and background */
+body {
+  background-color: var(--bg-primary);
+
+  /* Subtle radial glow effect at top of page */
+  background-image: radial-gradient(ellipse 80% 50% at 50% -10%,
+      rgba(232, 0, 58, 0.08) 0%,
+      transparent 60%);
+
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.6;
+
+  /* Improves text rendering */
+  -webkit-font-smoothing: antialiased;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+/* ─── Global Element Defaults ─────────────────────────────── */
+a {
+  color: inherit;
+  text-decoration: none;
+  /* Removes underline */
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  /* Prevents overflow */
+}
+
+ul {
+  list-style: none;
+  /* Removes bullet points */
+}
+
+main {
+  padding-top: var(--nav-height);
+  flex: 1;
+}
+
+
+/* ─── Navigation Bar ─────────────────────────────────────── */
+/* Fixed navigation at top of screen */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  height: var(--nav-height);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 clamp(1rem, 5vw, 3.5rem);
+
+  /* Semi-transparent glass effect */
+  background: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+
+  border-bottom: 1px solid var(--border);
+
+  /* Smooth transitions when scrolling */
+  transition: background var(--transition-smooth),
+    box-shadow var(--transition-smooth);
+}
+
+
+/* Navbar appearance when page is scrolled */
+.nav.scrolled {
+  background: rgba(10, 10, 15, 0.97);
+
+  /* Adds depth shadow */
+  box-shadow:
+    0 1px 0 var(--border),
+    0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+
+/* ─── Logo Styling ───────────────────────────────────────── */
+.nav__logo {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  letter-spacing: 0.1em;
+  position: relative;
+}
+
+/* Accent colour for "Plex" part */
+.nav__logo span {
+  color: var(--accent-red);
+}
+
+/* Animated underline on hover */
+.nav__logo::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background: var(--accent-red);
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  transition: transform var(--transition-smooth);
+}
+
+/* Expand underline on hover */
+.nav__logo:hover::after {
+  transform: scaleX(1);
+}
+
+
+/* ─── Navigation Links Container ─────────────────────────── */
+/* Centers links horizontally using absolute positioning */
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  z-index: 0;
+}
+
+
+/* ─── Individual Navigation Link ─────────────────────────── */
+.nav__link {
+  position: relative;
+
+  padding: 0.4rem 0.9rem;
+
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: var(--text-secondary);
+
+  border-radius: var(--radius-sm);
+
+  transition: color var(--transition-fast),
+    background var(--transition-fast);
+
+  /* Accessibility: ensures minimum touch size */
+  min-height: 44px;
+
+  display: flex;
+  align-items: center;
+}
+
+
+/* Hover effect */
+.nav__link:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+
+/* Active page link */
+.nav__link.active {
+  color: var(--text-primary);
+}
+
+
+/* Underline for active link */
+.nav__link.active::after {
+  content: '';
+
+  position: absolute;
+  bottom: 4px;
+  left: 0.9rem;
+  right: 0.9rem;
+
+  height: 2px;
+
+  background: var(--accent-red);
+  border-radius: 2px;
+}
+
+/* ─── Navigation Actions Container ───────────────────────── */
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+
+/* ─── Icon Button (Profile) ─────────────────────────────── */
+.nav__icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  border-radius: var(--radius-sm);
+  border: none;
+  background: transparent;
+
+  color: var(--text-secondary);
+  cursor: pointer;
+
+  transition: color var(--transition-fast),
+    background var(--transition-fast);
+}
+
+/* Hover effect for icon button */
+.nav__icon-btn:hover {
+  color: var(--text-primary);
+  background: var(--accent-red-dim);
+}
+
+
+/* ─── Call-To-Action Button (Get Tickets) ───────────────── */
+.nav__cta {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 0.5rem 1.25rem;
+  min-height: 44px;
+
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  color: #fff;
+  background: var(--accent-red);
+
+  border: none;
+  border-radius: var(--radius-sm);
+
+  cursor: pointer;
+
+  transition: background var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+/* Hover effect */
+.nav__cta:hover {
+  background: #ff1a4d;
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-1px);
+}
+
+/* Active (clicked) state */
+.nav__cta:active {
+  transform: translateY(0);
+}
+
+
+/* ─── Hamburger Menu (Mobile Only) ─────────────────────── */
+.nav__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+
+  cursor: pointer;
+
+  width: 44px;
+  height: 44px;
+
+  align-items: center;
+  justify-content: center;
+
+  background: none;
+  border: none;
+}
+
+/* Hamburger lines */
+.nav__hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+
+  background: var(--text-primary);
+  border-radius: 2px;
+
+  transition: transform var(--transition-smooth),
+    opacity var(--transition-fast);
+}
+
+/* ─── Mobile Navigation Drawer ─────────────────────────── */
+.nav__drawer {
+  display: none;
+
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+  right: 0;
+
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+
+  padding: 1rem clamp(1rem, 5vw, 3.5rem);
+
+  z-index: 999;
+
+  flex-direction: column;
+
+  animation: slideDown 0.25s ease;
+}
+
+/* Show drawer when active */
+.nav__drawer.open {
+  display: flex;
+}
+
+
+/* Links inside mobile drawer */
+.nav__drawer .nav__link {
+  font-size: 0.9rem;
+  padding: 0.85rem 0.5rem;
+
+  min-height: 44px;
+
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+}
+
+/* Remove border from last item */
+.nav__drawer .nav__link:last-child {
+  border-bottom: none;
+}
+
+
+/* ─── Slide Down Animation ─────────────────────────────── */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ─── Footer ─────────────────────────────────────────────── */
+.footer {
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border);
+  padding: 3.5rem clamp(1rem, 5vw, 3.5rem) 2rem;
+}
+
+.footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer__main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 3rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+
+  flex-wrap: wrap;
+}
+
+.footer__section-title {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  color: var(--text-primary);
+
+  margin-bottom: 1.25rem;
+}
+
+.footer__socials {
+  display: flex;
+  gap: 0.65rem;
+}
+
+.footer__social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+
+  border: 1.5px solid var(--text-secondary);
+  color: var(--text-secondary);
+
+  transition: color var(--transition-fast),
+    border-color var(--transition-fast),
+    background var(--transition-fast);
+}
+
+.footer__social:hover {
+  color: var(--text-primary);
+  border-color: var(--accent-red);
+  background: var(--accent-red-dim);
+}
+
+.footer__right {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+
+.footer__newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer__newsletter-input {
+  padding: 0.75rem 1rem;
+
+  min-height: 44px;
+
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 1rem;
+
+  width: 100%;
+  outline: none;
+
+  transition: border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.footer__newsletter-input::placeholder {
+  color: var(--text-muted);
+}
+
+.footer__newsletter-input:focus {
+  border-color: var(--accent-red);
+  box-shadow: 0 0 0 3px var(--accent-red-dim);
+}
+
+.footer__newsletter-btn {
+  padding: 0.75rem 1.5rem;
+
+  min-height: 44px;
+
+  background: var(--accent-red);
+  color: #fff;
+
+  border: none;
+  border-radius: var(--radius-sm);
+
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  width: 100%;
+
+  transition: background var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.footer__newsletter-btn:hover {
+  background: #ff1a4d;
+  box-shadow: var(--shadow-glow);
+}
+
+.footer__bottom {
+  padding-top: 1.5rem;
+}
+
+.footer__copy {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.footer__newsletter-btn.success {
+  background: #fff;
+  color: var(--accent-red);
+  border: 2px solid var(--accent-red);
+  box-shadow: 0 0 20px rgba(232, 0, 58, 0.2);
+  cursor: default;
+  pointer-events: none;
+}
+
+.footer__newsletter-input.success {
+  border-color: var(--accent-red);
+  box-shadow: 0 0 0 3px rgba(232, 0, 58, 0.1);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+
+/* ─── Accessibility ──────────────────────────────────────── */
+/* High contrast mode */
+.high-contrast {
+  --bg-primary: #000;
+  --bg-surface: #000;
+  --text-primary: #fff;
+  --text-secondary: #ddd;
+  --text-muted: #bbb;
+  --accent-red: blue;
+  --border: #fff;
+}
+
+.high-contrast .poster,
+.high-contrast .news__image {
+  border: 2px solid #fff;
+}
+
+/* Email input error state */
+.input-error {
+  border-color: var(--accent-red);
+  box-shadow: 0 0 0 3px rgba(232, 0, 58, 0.2);
+}
+
+/* Bigger Text button */
+body.large-font {
+  font-size: 1.25rem !important;
+}
+
+body.large-font h1 {
+  font-size: 4.5rem !important;
+}
+
+body.large-font h2 {
+  font-size: 3rem !important;
+}
+
+body.large-font p {
+  font-size: 1.3rem !important;
+}
+
+
+/* ─── Mobile / Tablet ───────────────────────────── */
+@media (max-width: 768px) {
+
+  .nav__links,
+  .nav__cta,
+  .nav__icon-btn {
+    display: none;
+  }
+
+  .nav__hamburger {
+    display: flex;
+  }
+
+  .footer__right {
+    min-width: unset;
+    width: 100%;
+  }
+}

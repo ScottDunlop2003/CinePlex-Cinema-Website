@@ -1,0 +1,262 @@
+/* =========================================================
+   whatson.css — Styles specific to whatson.html
+   ========================================================= */
+
+/* ─── Page container ─── */
+.whatson {
+  flex: 1;
+  padding-top: var(--nav-height);
+  background: var(--bg-primary);
+}
+
+/* ─── Cinema Selector bar ─── */
+.whatson__selector {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+  padding: 1.75rem clamp(1rem, 5vw, 3.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.whatson__selector label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.whatson__selector select {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  cursor: pointer;
+}
+
+/* ─── Date tabs ─── */
+.whatson__dates {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+}
+
+.whatson__date {
+  padding: 1.25rem 1.75rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  transition: color var(--transition-fast), background var(--transition-fast);
+}
+
+.whatson__date:hover {
+  color: var(--text-primary);
+}
+
+.whatson__date.active {
+  background: var(--accent-red);
+  color: #fff;
+  border-bottom-color: var(--accent-red);
+}
+
+/* ─── Legend ─── */
+.whatson__legend {
+  background: var(--bg-surface);
+  padding: 1.25rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.whatson__legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.whatson__legend-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+}
+
+.whatson__legend-dot.available {
+  background: var(--text-primary);
+}
+
+.whatson__legend-dot.soldout {
+  background: var(--text-muted);
+}
+
+/* ─── Movie grid ─── */
+.whatson__grid {
+  padding: 2rem clamp(1rem, 5vw, 3.5rem);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ─── Movie card ─── */
+.movie-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top section of card */
+.movie-card__top {
+  display: flex;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+/* Movie poster image */
+.movie-card__poster {
+  width: 180px;
+  min-width: 180px;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Info block beside poster */
+.movie-card__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.movie-card__title {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  color: var(--text-primary);
+}
+
+.movie-card__rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Age rating badge — circle for short ratings (U, 15, 18) */
+.rating-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #e8003a;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Wider pill shape for longer ratings like PG-13 */
+.rating-badge.wide {
+  width: auto;
+  padding: 0 6px;
+  border-radius: 4px;
+}
+
+.rating-badge.twelve {
+  background: #f5a623;
+}
+
+.movie-card__cert {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.movie-card__meta {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.movie-card__links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.movie-card__link {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.movie-card__link:hover {
+  color: var(--accent-red);
+}
+
+/* ─── Showtime buttons ─── */
+.movie-card__showtimes {
+  background: var(--bg-primary);
+  padding: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.movie-card__showtime-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.movie-card__times {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.showtime-btn {
+  padding: 0.6rem 1rem;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.showtime-btn:hover {
+  background: var(--accent-red);
+  border-color: var(--accent-red);
+}
+
+.showtime-btn.soldout {
+  color: var(--text-muted);
+  border-color: var(--text-muted);
+  cursor: not-allowed;
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 768px) {
+  .whatson__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .movie-card__poster {
+    width: 80px;
+    min-width: 80px;
+  }
+}

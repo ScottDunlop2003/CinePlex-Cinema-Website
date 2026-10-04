@@ -1,0 +1,120 @@
+/* =========================================================
+   main-menu.css — Styles specific to Main-Menu.html
+   ========================================================= */
+
+/* ─── Page Headings ──────────────────────────────────────── */
+#main-heading {
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  color: var(--text-primary);
+  margin: 30px 0 10px 0;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+}
+
+#plex {
+  color: var(--accent-red);
+}
+
+#tagline {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+  color: var(--text-primary);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ─── Movie Poster Slideshow ─────────────────────────────── */
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Container holding movie poster images */
+.poster-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-grow: 1;
+}
+
+/* Individual movie poster */
+.poster {
+  width: 270px;
+  height: 405px;
+  object-fit: cover;
+  border: 3px solid black;
+  border-radius: 10px;
+}
+
+/* Slideshow prev/next buttons */
+.slider button {
+  padding: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+/* ─── News Section ───────────────────────────────────────── */
+.news {
+  padding: 40px 20px;
+}
+
+/* Section title */
+.news__title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+/* Container holding all news items */
+.news__container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Individual news item */
+.news__item {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  background: var(--bg-surface);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.news__item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-glow);
+}
+
+/* News image */
+.news__image {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Text content */
+.news__content {
+  flex: 1;
+}
+
+.news__heading {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.news__text {
+  color: var(--text-secondary);
+}

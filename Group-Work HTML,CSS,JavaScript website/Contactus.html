@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CinePlex — Contact Us</title>
+  <!-- Links the Favicon image to show up at the top tab of the brower -->
+  <link rel="icon" href="Images/favicon.png">
+
+  <link rel="stylesheet" href="CSS/global.css" />
+  <link rel="stylesheet" href="CSS/contact.css" />
+
+  <!-- External JavaScript -->
+  <script src="JavaScripts/nav.js" defer></script>
+  <script src="JavaScripts/subscribe.js" defer></script>
+  <script src="JavaScripts/Accessibility_Buttion.js" defer></script>
+  <script src="JavaScripts/Contacts.js" defer></script>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="mainNav">
+
+    <a href="#" class="nav__logo">Cine<span>Plex</span></a>
+
+    <ul class="nav__links">
+      <li><a href="Main-Menu.html" class="nav__link">Home</a></li>
+      <li><a href="whatson.html" class="nav__link">What's On</a></li>
+      <li><a href="Locations.html" class="nav__link">Location</a></li>
+      <li><a href="Contactus.html" class="nav__link active">Contact Us</a></li>
+    </ul>
+
+    <!-- NAV ACTIONS -->
+    <div class="nav__actions">
+
+      <!-- Profile button -->
+      <button class="nav__icon-btn" aria-label="Profile">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+          <circle cx="12" cy="7" r="4" />
+        </svg>
+      </button>
+
+      <!-- Accessibility -->
+      <button id="contrastBtn" class="nav__cta">
+        High Contrast
+      </button>
+      <button id="textResizeBtn" class="nav__cta">
+        Bigger Text
+      </button>
+
+      <!--  Get Tickets button -->
+      <a href="whatson.html" class="nav__cta">Get Tickets</a>
+
+    </div>
+
+    <button class="nav__hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+
+  </nav>
+
+  <!-- MOBILE DRAWER -->
+  <div class="nav__drawer" id="drawer">
+    <a href="Main-Menu.html" class="nav__link">Home</a>
+    <a href="whatson.html" class="nav__link">What's On</a>
+    <a href="Locations.html" class="nav__link">Location</a>
+    <a href="Contactus.html" class="nav__link active">Contact Us</a>
+  </div>
+
+  <main>
+
+    <section class="contact-header">
+      <h1>Contact Us</h1>
+      <p>Have a question or need assistance? We're here to help.</p>
+    </section>
+
+    <section class="contact-container">
+
+      <div class="contact-info">
+        <h3>Get in Touch</h3>
+
+        <div class="info-notice">
+          <p>To reach out regarding this specific location, please complete the form with your details and a brief
+            explanation.</p>
+          <p>Please allow up to 48 hours for a response.</p>
+        </div>
+
+        <div class="info-item">
+          <h4>Address</h4>
+          <p>CinePlex HQ<br>123 Cinema Street<br>Belfast</p>
+        </div>
+
+        <div class="info-item">
+          <h4>Email</h4>
+          <p>cineplexsupport@gmail.com</p>
+        </div>
+
+        <div class="info-item">
+          <h4>Phone</h4>
+          <p>+44 7564 741411</p>
+        </div>
+
+        <div class="info-item">
+          <h4>Opening Hours</h4>
+          <p>Mon – Sun: 10:00 – 23:30</p>
+        </div>
+      </div>
+
+      <!-- SUCCESS MESSAGE -->
+      <div id="form-success" class="form-success-container">
+        <h2>Message Sent!</h2>
+        <p>We’ll get back to you shortly.</p>
+      </div>
+
+      <!-- FORM -->
+      <form class="contact-form" id="cineplexContact">
+
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" id="name" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="email" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+          <label>Subject</label>
+          <input type="text" id="subject" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+          <label>Message</label>
+          <textarea id="message" class="form-textarea" required></textarea>
+
+          <div id="char-counter" class="char-counter">
+            0 / 300 characters
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER SECTION -->
+  <footer class="footer">
+    <div class="footer__inner">
+
+      <div class="footer__main">
+
+        <!-- Left side of footer (social section) -->
+        <div class="footer__left">
+          <h4 class="footer__section-title">Join the Conversation</h4>
+
+          <!-- Social media icons -->
+          <div class="footer__socials">
+
+            <!-- Facebook icon -->
+            <a href="#" class="footer__social" aria-label="Facebook">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
+            </a>
+
+            <!-- Instagram icon -->
+            <a href="#" class="footer__social" aria-label="Instagram">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Right side of footer (newsletter signup) -->
+        <div class="footer__right">
+          <h4 class="footer__section-title">
+            Receive Our Latest Releases and Offers
+          </h4>
+
+          <!-- Email subscription form -->
+          <div class="footer__newsletter-form">
+            <input class="footer__newsletter-input" id="emailInput" type="email" placeholder="Your Email Address" />
+
+            <!-- Button triggers email validation in JavaScript -->
+            <button class="footer__newsletter-btn" id="subscribeBtn">
+              Subscribe
+            </button>
+          </div>
+        </div>
+
+      </div>
+      <!-- Footer bottom (copyright) -->
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2026 CinePlex Ltd</p>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+
+</html>
+
+</body>
+
+</html>

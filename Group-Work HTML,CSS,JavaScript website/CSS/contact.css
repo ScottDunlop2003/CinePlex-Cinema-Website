@@ -1,0 +1,210 @@
+/* =========================================================
+   contact.css — Styles specific to Contactus.html
+   ========================================================= */
+
+/* ─── Page Header ────────────────────────────────────────── */
+.contact-header {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 0 clamp(1rem, 5vw, 3.5rem);
+}
+
+.contact-header h1 {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  letter-spacing: 0.1em;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.contact-header p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+/* ─── Two-Column Layout ──────────────────────────────────── */
+.contact-container {
+  max-width: 1200px;
+  margin: 3rem auto 5rem;
+  padding: 0 clamp(1rem, 5vw, 3.5rem);
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+}
+
+/* ─── Info Panel ─────────────────────────────────────────── */
+.contact-info {
+  background: var(--bg-surface);
+  padding: 2.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  height: fit-content;
+}
+
+.contact-info h3 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--accent-red);
+  letter-spacing: 0.05em;
+}
+
+.info-notice {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+}
+
+.info-item {
+  margin-bottom: 1.75rem;
+}
+
+.info-item:last-child {
+  margin-bottom: 0;
+}
+
+.info-item h4 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.info-item p {
+  color: var(--text-primary);
+  line-height: 1.8;
+}
+
+/* ─── Contact Form ───────────────────────────────────────── */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  font-weight: 700;
+}
+
+.form-input,
+.form-textarea {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  padding: 1rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 180px;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: var(--accent-red);
+  box-shadow: 0 0 0 3px var(--accent-red-dim);
+}
+
+.form-textarea.error {
+  border-color: var(--accent-red);
+}
+
+/* ─── Submit Button ──────────────────────────────────────── */
+.submit-btn {
+  padding: 1rem 2rem;
+  background: var(--accent-red);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+
+.submit-btn:hover {
+  background: #ff1a4d;
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+/* ─── Character Counter ──────────────────────────────────── */
+.char-counter {
+  text-align: right;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 5px;
+  transition: color var(--transition-fast);
+}
+
+.char-counter.error {
+  color: var(--accent-red);
+}
+
+/* ─── Success Message ────────────────────────────────────── */
+.form-success-container {
+  display: none;
+  text-align: center;
+  padding: 3rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--accent-red);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-glow);
+  animation: fadeIn 0.5s ease;
+}
+
+.form-success-container h2 {
+  font-family: var(--font-display);
+  color: var(--accent-red);
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─── Mobile ─────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}

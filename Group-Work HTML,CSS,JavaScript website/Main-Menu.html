@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <!-- Makes the website responsive on different screen sizes -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Title shown in the browser tab -->
+  <title>CinePlex Home</title>
+  <!-- Links the Favicon image to show up at the top tab of the brower -->
+  <link rel="icon" href="Images/favicon.png">
+
+  <!-- Links external CSS file -->
+  <link rel="stylesheet" href="CSS/global.css" />
+  <link rel="stylesheet" href="CSS/main-menu.css" />
+
+  <!-- Links external JavaScript file (defer ensures it runs after HTML loads could have also put it at the bottom instead) -->
+  <script src="JavaScripts/jquery.js" defer></script>
+  <script src="JavaScripts/nav.js" defer></script>
+  <script src="JavaScripts/slideshow.js" defer></script>
+  <script src="JavaScripts/Accessibility_Buttion.js" defer></script>
+  <script src="JavaScripts/subscribe.js" defer></script>
+</head>
+
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="nav" id="mainNav">
+
+    <!-- Website logo/title -->
+    <a href="#" class="nav__logo">Cine<span>Plex</span></a>
+
+    <!-- Navigation links -->
+    <ul class="nav__links">
+      <li><a href="Main-Menu.html" class="nav__link active">Home</a></li>
+      <li><a href="whatson.html" class="nav__link">What's On</a></li>
+      <li><a href="Locations.html" class="nav__link">Location</a></li>
+      <li><a href="Contactus.html" class="nav__link">Contact Us</a></li>
+
+    </ul>
+
+
+    <!-- Navigation actions (profile icon and ticket button) -->
+    <div class="nav__actions">
+
+      <!-- Profile button with SVG icon -->
+      <button class="nav__icon-btn" aria-label="Profile">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+          <circle cx="12" cy="7" r="4" />
+        </svg>
+      </button>
+
+      <!-- Accessibility button -->
+      <button id="contrastBtn" class="nav__cta">
+        High Contrast
+      </button>
+
+      <button id="textResizeBtn" class="nav__cta">
+        Bigger Text
+      </button>
+
+      <!-- Call-to-action button moved into nav actions -->
+      <a href="whatson.html" class="nav__cta">Get Tickets</a>
+    </div>
+
+    <!-- Hamburger menu button for mobile navigation -->
+    <button class="nav__hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile navigation drawer (shown when hamburger is clicked) -->
+  <div class="nav__drawer" id="drawer">
+    <a href="Main-Menu.html" class="nav__link active">Home</a>
+    <a href="whatson.html" class="nav__link">What's On</a>
+    <a href="Locations.html" class="nav__link">Location</a>
+    <a href="Contactus.html" class="nav__link">Contact Us</a>
+  </div>
+
+  <main>
+
+    <!-- Main heading -->
+    <h1 id="main-heading">
+      Welcome to Cine<span id="plex">Plex</span>
+    </h1>
+
+    <!-- Tagline-->
+    <p id="tagline">
+      Enjoy the latest blockbuster movies in comfort and style.
+    </p>
+
+    <!-- Section heading -->
+    <h2>Now Showing</h2>
+
+    <!-- Image slider container -->
+    <div class="slider">
+
+      <!-- Button to move slideshow backwards -->
+      <button class="nav__cta" id="prevBtn">⬅</button>
+
+      <!-- Container holding movie poster images -->
+      <div class="poster-container">
+        <img id="img1" class="poster"> <!-- First image -->
+        <img id="img2" class="poster"> <!-- Second image -->
+        <img id="img3" class="poster"> <!-- Third image -->
+        <img id="img4" class="poster"> <!-- Fourth image -->
+        <img id="img5" class="poster"> <!-- Fifth image -->
+      </div>
+
+      <!-- Button to move slideshow forwards -->
+      <button class="nav__cta" id="nextBtn">➡</button>
+
+    </div>
+
+    <!-- NEWS SECTION -->
+    <section class="news">
+
+      <h2 class="news__title">Latest News</h2>
+
+      <div class="news__container">
+
+        <!-- News item 1 -->
+        <div class="news__item">
+          <img src="Images/Popcorn.jpg" alt="Fresh cinema popcorn" class="news__image">
+          <div class="news__content">
+            <h3 class="news__heading">Fresh Popcorn Now Available</h3>
+            <p class="news__text">
+              Enjoy the ultimate cinema experience with our freshly prepared popcorn.
+              Available in a variety of flavours, including classic butter, sweet caramel,
+              and savoury cheese, there's something for everyone to enjoy.
+            </p>
+          </div>
+        </div>
+
+        <!-- News item 2 -->
+        <div class="news__item">
+          <img src="Images/VIP_seats.jpg" alt="Cinema Seats Upgraded" class="news__image">
+          <div class="news__content">
+            <h3 class="news__heading">Cinema Experience Upgraded</h3>
+            <p class="news__text">
+              Our cinemas now feature upgraded seating designed to provide the ultimate movie experience.
+              Enjoy extra legroom, improved comfort, and a more immersive atmosphere so you can relax
+              and fully enjoy every moment on the big screen.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER SECTION -->
+  <footer class="footer">
+    <div class="footer__inner">
+
+      <div class="footer__main">
+
+        <!-- Left side of footer (social section) -->
+        <div class="footer__left">
+          <h4 class="footer__section-title">Join the Conversation</h4>
+
+          <!-- Social media icons -->
+          <div class="footer__socials">
+
+            <!-- Facebook icon -->
+            <a href="#" class="footer__social" aria-label="Facebook">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
+            </a>
+
+            <!-- Instagram icon -->
+            <a href="#" class="footer__social" aria-label="Instagram">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Right side of footer (newsletter signup) -->
+        <div class="footer__right">
+          <h4 class="footer__section-title">
+            Receive Our Latest Releases and Offers
+          </h4>
+
+          <!-- Email subscription form -->
+          <div class="footer__newsletter-form">
+            <input class="footer__newsletter-input" id="emailInput" type="email" placeholder="Your Email Address" />
+
+            <!-- Button triggers email validation in JavaScript -->
+            <button class="footer__newsletter-btn" id="subscribeBtn">
+              Subscribe
+            </button>
+          </div>
+        </div>
+
+      </div>
+      <!-- Footer bottom (copyright) -->
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2026 CinePlex Ltd</p>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+
+</html>
